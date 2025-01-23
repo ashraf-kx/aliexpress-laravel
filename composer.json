@@ -25,12 +25,5 @@
     "prefer-stable": true,
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-    "laravel": {
-        "providers": [
-            "Shacz\\AliExpressSDK\\AliExpressSDKServiceProvider"
-        ]
     }
-}
 }
