@@ -18,12 +18,19 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-        "autoload": {
+    "autoload": {
         "psr-4": {
-            "Shacz\\AliExpressSdk\\": "src/"
+            "Shacz\\AliExpressSdk\\": "src"
         }
     },
     "config": {
         "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shacz\\AliExpressSdk\\AliExpressSDKServiceProvider"
+            ]
+        }
     }
 }
