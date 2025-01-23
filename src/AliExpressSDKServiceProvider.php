@@ -36,5 +36,31 @@ class AliExpressSDKServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/aliexpress.php' => config_path('aliexpress.php'),
         ]);
+
+        // Automatically publish the configuration file if it doesn't exist
+        if ($this->app->runningInConsole()) {
+            $this->autoPublish();
+        }
+    }
+
+        /**
+     * Auto-publish assets if not already published.
+     */
+    protected function autoPublish()
+    {
+        $configFile = config_path('aliexpress.php');
+
+        if (!file_exists($configFile)) {
+            $this->publishes([
+                __DIR__ . '/../config/aliexpress.php' => $configFile,
+            ], 'config');
+
+            // Optionally log or output that the file was published
+            $this->commands([
+                function () {
+                    $this->info('AliExpressSDK configuration file has been published.');
+                },
+            ]);
+        }
     }
 }
