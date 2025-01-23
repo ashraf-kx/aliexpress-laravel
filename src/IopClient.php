@@ -227,7 +227,7 @@ class IopClient
 		$sysParams["app_key"] = $this->appkey;
 		$sysParams["sign_method"] = self::SIGN_METHOD;
 		$sysParams["timestamp"] = $this->msectime();
-        $sysParams["method"] = $request->getAppkey();
+        $sysParams["method"] = $request->getApiName();
         $sysParams["partner_id"] = self::SDK_VERSION;
         $sysParams["simplify"] = $request->getSimplify();
         $sysParams["format"] = $request->getFormat();
@@ -237,7 +237,7 @@ class IopClient
 			$sysParams["session"] = $accessToken;
 		}
 
-		$apiParams = $request->getUfdParams();
+		$apiParams = $request->getUdfParams();
 		
 		$requestUrl = $this->gatewayUrl;
 
@@ -253,7 +253,7 @@ class IopClient
 			$sysParams["debug"] = 'true';
 		}
 
-		$sysParams["sign"] = $this->generateSign($request->getAppkey, array_merge($apiParams, $sysParams));
+		$sysParams["sign"] = $this->generateSign($request->getApiName(), array_merge($apiParams, $sysParams));
 
 		foreach ($sysParams as $sysParamKey => $sysParamValue)
 		{
