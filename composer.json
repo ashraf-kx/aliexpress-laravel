@@ -1,7 +1,7 @@
 {
     "name": "shacz/ali-express-sdk",
     "description": "AliExpress API SDK for Laravel",
-    "keywords": ["aliexpress", "aliexpressapi", "aliexpresssdk"],
+    "keywords": ["aliexpress", "aliexpress api", "aliexpress sdk", "aliexpress laravel", "aliexpress php"],
     "license": "MIT",
     "version": "1.0.1",
     "autoload": {
@@ -22,5 +22,12 @@
         
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+    "laravel": {
+        "providers": [
+            "Shacz\\AliExpressSDK\\AliExpressSDKServiceProvider"
+        ]
+    }
+}
 }
