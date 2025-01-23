@@ -6,18 +6,53 @@ use Exception;
 
 class IopRequest
 {
-	private $apiName;
-	private $headerParams = array();
-	private $udfParams = array();
-	private $fileParams = array();
-	private $httpMethod = 'POST';
-    private $simplify = 'false';
-    private $format = 'json';   //支持TOP的xml
+	private string $apiName;
+	private array $headerParams = array();
+	private array $udfParams = array();
+	private array $fileParams = array();
+	private string $httpMethod = 'POST';
+    private string $simplify = 'false';
+    private string $format = 'json';
 
-	public function __construct($apiName,$httpMethod = 'POST')
+	public function getApiName() : string
+	{
+		return $this->apiName;
+	}
+
+	public function getHeaderParams() : array
+	{
+		return $this->headerParams;
+	}
+
+	public function getUdfParams() : array
+	{
+		return $this->udfParams;
+	}
+
+	public function getFileParams() : array
+	{
+		return $this->fileParams;
+	}
+
+	public function getHttpMethod() : string
+	{
+		return $this->httpMethod;
+	}
+
+	public function getSimplify() : string
+	{
+		return $this->simplify;
+	}
+
+	public function getFormat() : string
+	{
+		return $this->format;
+	}
+
+	public function __construct($apiName, $httpMethod = 'POST')
 	{
 		$this->apiName = $apiName;
-		$this->httpMethod = $httpMethod;
+		$this->httpMethod = $httpMethod;		
 
 		if($this->startWith($apiName,"//"))
 		{
