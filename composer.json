@@ -3,7 +3,7 @@
     "description": "AliExpress API SDK for Laravel",
     "keywords": ["aliexpress", "aliexpressapi", "aliexpresssdk"],
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "autoload": {
         "psr-4": {
             "Shacz\\AliExpressSdk\\": "src/"
