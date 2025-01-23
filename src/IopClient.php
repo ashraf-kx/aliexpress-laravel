@@ -227,17 +227,17 @@ class IopClient
 		$sysParams["app_key"] = $this->appkey;
 		$sysParams["sign_method"] = self::SIGN_METHOD;
 		$sysParams["timestamp"] = $this->msectime();
-        $sysParams["method"]=$request->apiName;
+        $sysParams["method"] = $request->getAppkey();
         $sysParams["partner_id"] = self::SDK_VERSION;
-        $sysParams["simplify"] = $request->simplify;
-        $sysParams["format"] = $request->format;
+        $sysParams["simplify"] = $request->getSimplify();
+        $sysParams["format"] = $request->getFormat();
 
         if (null != $accessToken)
 		{
 			$sysParams["session"] = $accessToken;
 		}
 
-		$apiParams = $request->udfParams;
+		$apiParams = $request->getUfdParams();
 		
 		$requestUrl = $this->gatewayUrl;
 
@@ -252,7 +252,8 @@ class IopClient
 		{
 			$sysParams["debug"] = 'true';
 		}
-		$sysParams["sign"] = $this->generateSign($request->apiName,array_merge($apiParams, $sysParams));
+
+		$sysParams["sign"] = $this->generateSign($request->getAppkey, array_merge($apiParams, $sysParams));
 
 		foreach ($sysParams as $sysParamKey => $sysParamValue)
 		{
@@ -265,13 +266,13 @@ class IopClient
 
 		try
 		{
-			if($request->httpMethod == 'POST')
+			if($request->getHttpMethod() == 'POST')
 			{
-				$resp = $this->curl_post($requestUrl, $apiParams, $request->fileParams,$request->headerParams);
+				$resp = $this->curl_post($requestUrl, $apiParams, $request->getFileParams() ,$request->getHeaderParams());
 			}
 			else
 			{
-				$resp = $this->curl_get($requestUrl, $apiParams,$request->headerParams);			
+				$resp = $this->curl_get($requestUrl, $apiParams, $request->getHeaderParams());			
 			}
 		}
 		catch (Exception $e)
