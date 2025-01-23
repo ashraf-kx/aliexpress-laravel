@@ -1,0 +1,20 @@
+{
+    "name": "shacz/ali-express-sdk",
+    "description": "AliExpress API SDK for Laravel",
+    "keywords": ["aliexpress", "aliexpressapi", "aliexpresssdk"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Shacz\\AliExpressSdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Achraf k.",
+            "email": "achrafkarrouche@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2"        
+    }
+}
