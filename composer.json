@@ -1,14 +1,9 @@
 {
-    "name": "shacz/ali-express-sdk",
+    "name": "shacz/aliexpress-sdk",
     "description": "AliExpress API SDK for Laravel",
     "keywords": ["aliexpress", "aliexpress api", "aliexpress sdk", "aliexpress laravel", "aliexpress php"],
     "license": "MIT",
     "version": "1.3.1",
-    "autoload": {
-        "psr-4": {
-            "Shacz\\AliExpressSdk\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Achraf k.",
@@ -23,6 +18,11 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+        "autoload": {
+        "psr-4": {
+            "Shacz\\AliExpressSdk\\": "src/"
+        }
+    },
     "config": {
         "sort-packages": true
     }
