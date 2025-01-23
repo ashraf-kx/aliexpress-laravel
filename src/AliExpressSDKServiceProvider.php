@@ -32,10 +32,10 @@ class AliExpressSDKServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Publish configuration
+        // Publish the configuration file
         $this->publishes([
             __DIR__ . '/../config/aliexpress.php' => config_path('aliexpress.php'),
-        ]);
+        ], 'config');
 
         // Automatically publish the configuration file if it doesn't exist
         if ($this->app->runningInConsole()) {
