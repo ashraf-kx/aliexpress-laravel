@@ -1,5 +1,5 @@
 ## Install
 ```shell
-composer require shacz/ali-express-sdk
+composer require shacz/aliexpress-sdk
 ```
 
