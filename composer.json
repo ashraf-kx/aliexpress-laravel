@@ -3,7 +3,7 @@
     "description": "AliExpress API SDK for Laravel",
     "keywords": ["aliexpress", "aliexpress api", "aliexpress sdk", "aliexpress laravel", "aliexpress php"],
     "license": "MIT",
-    "version": "1.5.7",
+    "version": "1.5.9",
     "authors": [
         {
             "name": "Achraf k.",
